@@ -58,7 +58,6 @@ body,
 
 body {
   background: $heavy-yellow;
-
 }
 
 //header
@@ -123,50 +122,6 @@ body {
     text-align: center;
     font-size: 16px;
   }
-
-  .button-wrapper {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    bottom: 10%;
-
-    div:nth-child(1) {
-      font-family: $Goldman-medium;
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    .button {
-      background: $heavy-yellow;
-      height: 66px;
-      width: 151px;
-      border-radius: 30px;
-      box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.09);
-      border: none;
-      margin-top: 15px;
-
-      .button-inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .dice {
-          img {
-            width: 30px;
-            height: 30px;
-          }
-        }
-
-        .CTA {
-          margin-left: 10px;
-          font-family: $Goldman-bold;
-          font-size: 20px;
-          font-weight: 700;
-        }
-      }
-    }
-  }
 }
 
 .jar-tsai {
@@ -184,4 +139,98 @@ body {
   width: 90% !important;
   margin: 5% 5% 10% 5%;
   z-index: 5;
+}
+
+
+//button general setting
+.button-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 10%;
+
+  div:nth-child(1) {
+    font-family: $Goldman-medium;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .button {
+    background: $heavy-yellow;
+    height: 66px;
+    width: 151px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.09);
+    border: none;
+    margin-top: 15px;
+
+    .button-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dice {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .CTA {
+        margin-left: 10px;
+        font-family: $Goldman-bold;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+#answer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: $white;
+
+  .meal-goes {}
+
+  .answer-card {
+    background: $light-yellow;
+    width: 80%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.07);
+
+    .hz-line {
+      background: $heavy-metal;
+      height: 0.7px;
+      width: 100%;
+      opacity: 0.7;
+    }
+
+    .card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div:nth-child(2) {
+        font-weight: 700;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .button-wrapper {
+    div:nth-child(1) {
+      font-size: 23px;
+    }
+
+    .button {
+      width: calc(200px + 10vw);
+
+    }
+  }
 }

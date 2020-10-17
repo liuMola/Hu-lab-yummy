@@ -29,6 +29,7 @@ const Lights = () => {
 }
 
 function Card() {
+  const buttonLetter = "Draw!"
 
   return (
     <>
@@ -42,7 +43,7 @@ function Card() {
           <div>
             Save your meal now!
           </div>
-          <Button />
+          <Button buttonLetter={buttonLetter} />
         </div>
       </div>
       <div className="jar-tsai">

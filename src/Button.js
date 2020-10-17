@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({ buttonLetter }) => {
+
     return (
         <button className="button">
             <div className="button-inner">
@@ -8,7 +9,7 @@ const Button = () => {
                     <img src="/dice64.png" alt="" />
                 </div>
                 <div className="CTA">
-                    Draw!
+                    {buttonLetter}
                 </div>
             </div>
         </button>

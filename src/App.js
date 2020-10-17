@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import Main from "./main";
 import './App.scss';
-import AnswerCard from './AnswerCard';
+import Answer from './Answer';
 
 
 
@@ -12,13 +12,12 @@ function App() {
   return (
     <Router>
       <div>
-        <Link to="/answer">About</Link>
         <Switch>
           <Route exact path="/">
             <Main />
           </Route>
           <Route path="/answer">
-            <AnswerCard />
+            <Answer />
           </Route>
         </Switch>
       </div>
