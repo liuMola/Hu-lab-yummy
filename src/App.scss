@@ -15,6 +15,8 @@ $Goldman-medium: Goldmansans-Med,
 sans-serif;
 $Romantically: Romantically,
 sans-serif;
+$PingFong: PingFong,
+sans-serif;
 
 @font-face {
   font-family: 'Goldmansans';
@@ -44,6 +46,12 @@ sans-serif;
     url('./font/Apercu_Re.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'PingFong';
+  src:
+    url('./font/PingFangHK-Regular.woff2') format('woff2'),
+    url('./font/PingFangHK-Regular.otf') format('opentype');
+}
 
 html,
 body,
@@ -195,14 +203,51 @@ body {
   height: 100vh;
   width: 100vw;
   background: $white;
+  font-family: $PingFong;
 
-  .meal-goes {}
+  .meal-goes {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    div:nth-child(2) {
+      margin-left: 10px;
+      font-family: $Apercu;
+    }
+  }
 
   .answer-card {
     background: $light-yellow;
     width: 80%;
     border-radius: 30px;
     box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.07);
+
+    .card-top {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .rich-or-poor {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: 5%;
+        top: 5%;
+        font-family: $PingFong;
+        font-size: 14px;
+        opacity: 0.6;
+
+        div:nth-child(2) {
+          margin-left: 10px;
+        }
+      }
+
+      div:nth-child(3) {
+        font-weight: 700;
+        font-size: 28px;
+      }
+    }
 
     .hz-line {
       background: $heavy-metal;
@@ -211,14 +256,13 @@ body {
       opacity: 0.7;
     }
 
-    .card-top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      div:nth-child(2) {
-        font-weight: 700;
-        font-size: 28px;
+    .card-info {
+      .price {
+        .coin {
+          img {
+            width: 30px;
+          }
+        }
       }
     }
   }
@@ -230,7 +274,6 @@ body {
 
     .button {
       width: calc(200px + 10vw);
-
     }
   }
 }

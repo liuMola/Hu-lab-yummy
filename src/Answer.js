@@ -11,7 +11,11 @@ function Answer() {
         <section id="answer">
             <Header />
             <div className="meal-goes">
-                <div></div>
+                <div>
+                    <svg width='9px' height='10px' >
+                        <path d=" M 0 0  L9 4 L 0 8 Z " />
+                    </svg>
+                </div>
                 <div>Your meal goes</div>
             </div>
             <AnswerCard />
