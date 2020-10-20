@@ -95,7 +95,7 @@ body {
 }
 
 .main-text {
-  position: relative;
+  position: absolute;
   top: 13%;
   left: 9%;
 
@@ -173,23 +173,28 @@ body {
     border: none;
     margin-top: 15px;
 
-    .button-inner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    a {
+      color: $heavy-metal;
+      text-decoration: none;
 
-      .dice {
-        img {
-          width: 30px;
-          height: 30px;
+      .button-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .dice {
+          img {
+            width: 30px;
+            height: 30px;
+          }
         }
-      }
 
-      .CTA {
-        margin-left: 10px;
-        font-family: $Goldman-bold;
-        font-size: 20px;
-        font-weight: 700;
+        .CTA {
+          margin-left: 10px;
+          font-family: $Goldman-bold;
+          font-size: 20px;
+          font-weight: 700;
+        }
       }
     }
   }
@@ -209,6 +214,8 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    top: 11%;
+    left: -26%;
 
     div:nth-child(2) {
       margin-left: 10px;
@@ -217,10 +224,17 @@ body {
   }
 
   .answer-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: $light-yellow;
+    height: 55vh;
     width: 80%;
+    top: 13%;
     border-radius: 30px;
-    box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 7px 7px 13px 0px rgba(0, 0, 0, 0.1);
+
 
     .card-top {
       position: relative;
@@ -229,47 +243,82 @@ body {
       align-items: center;
 
       .rich-or-poor {
-        position: absolute;
+        position: relative;
         display: flex;
         align-items: center;
-        left: 5%;
-        top: 5%;
+        left: -15%;
         font-family: $PingFong;
-        font-size: 14px;
+        font-size: 12px;
         opacity: 0.6;
 
         div:nth-child(2) {
-          margin-left: 10px;
+          margin-left: 8px;
         }
       }
 
       div:nth-child(3) {
-        font-weight: 700;
+        font-weight: bold;
         font-size: 28px;
+        margin: 3% 0 5% 0;
       }
     }
+
+    .canvas {
+      height: 20vh !important;
+      width: 90% !important;
+    }
+
 
     .hz-line {
       background: $heavy-metal;
       height: 0.7px;
       width: 100%;
-      opacity: 0.7;
+      opacity: 0.5;
     }
 
     .card-info {
+      margin: 8% 0 0 40px;
+
       .price {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        transform: translateX(-5%);
+        margin-bottom: 2.5%;
+
+        span:nth-child(2) {
+          padding-left: 8px;
+          font-size: 12px;
+          align-self: flex-end;
+        }
+
         .coin {
+          margin-right: 7px;
+
           img {
-            width: 30px;
+            width: 23px;
           }
         }
+      }
+
+      div:nth-child(2) {
+        font-size: 18px;
+        font-weight: bold;
+        opacity: 0.8;
+      }
+
+      div:nth-child(3) {
+        margin: 5px 10% 0 0;
+        font-size: 14px;
+        opacity: 0.5;
       }
     }
   }
 
   .button-wrapper {
     div:nth-child(1) {
-      font-size: 23px;
+      font-size: 20px;
     }
 
     .button {

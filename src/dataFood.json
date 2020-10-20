@@ -10,9 +10,9 @@
     {
         "id": 1,
         "name": "承瑞燒肉飯",
-        "trueName": "",
+        "trueName": "鑫吉野烤肉飯公館店",
         "address": "台北市中正區羅斯福路三段286巷4弄10號",
-        "price": "60-100",
+        "price": "60 - 100",
         "expensive": true
     },
     {
@@ -20,20 +20,20 @@
         "name": "韓國承瑞",
         "trueName": "小飯館兒",
         "address": "台北市中正區汀州路三段202號",
-        "price": "",
-        "expensive": false
+        "price": "100 - 150+",
+        "expensive": true
     },
     {
         "id": 3,
         "name": "東南亞承瑞",
-        "trueName": "",
-        "address": "",
-        "price": "",
+        "trueName": "尚家香雲南美味麵食館",
+        "address": "台北市大安區新生南路三段60巷2之1號",
+        "price": "80 - 130",
         "expensive": true
     },
     {
         "id": 4,
-        "name": "geng魚湯",
+        "name": "Geng魚湯",
         "trueName": "",
         "address": "",
         "price": "",
@@ -41,18 +41,18 @@
     },
     {
         "id": 5,
-        "name": "geng德基",
+        "name": "Geng德基",
         "trueName": "肯德基KFC-台北台大餐廳",
         "address": "台北市大安區新生南路三段96-1號",
-        "price": "99-200+",
+        "price": "99 - 200+",
         "expensive": true
     },
     {
         "id": 6,
-        "name": "geng鍋",
+        "name": "Geng鍋",
         "trueName": "無鍋不樂",
         "address": "台北市中正區羅斯福路四段78巷1弄3號",
-        "price": "130-170",
+        "price": "130 - 170",
         "expensive": true
     },
     {
@@ -60,7 +60,7 @@
         "name": "麻辣鴨血",
         "trueName": "鴉片粉圓",
         "address": "台北市中正區羅斯福路四段52巷16弄4號",
-        "price": "40-200",
+        "price": "40 - 200",
         "expensive": true
     },
     {
@@ -68,7 +68,7 @@
         "name": "酸辣粉",
         "trueName": "麻辣巴蕾正宗重慶酸辣粉",
         "address": "台北市中正區汀州路三段183號",
-        "price": "75-150+",
+        "price": "75 - 150+",
         "expensive": true
     },
     {
@@ -76,7 +76,7 @@
         "name": "姐姐a泰奶",
         "trueName": "阿里媽媽南洋料理",
         "address": "台北市中正區羅斯福路四段136巷1弄3號",
-        "price": "100-140",
+        "price": "100 - 140",
         "expensive": true
     },
     {
@@ -84,7 +84,7 @@
         "name": "老闆雲集",
         "trueName": "八方雲集(台大店)",
         "address": "台北市大安區羅斯福路三段333巷9號",
-        "price": "5-∞",
+        "price": "5 - ∞",
         "expensive": false
     },
     {
@@ -92,7 +92,7 @@
         "name": "志凌第一腿",
         "trueName": "壹森泰食堂 師大第一腿",
         "address": "台北市中正區汀州路三段283號",
-        "price": "100-130",
+        "price": "100 - 130",
         "expensive": true
     },
     {
@@ -100,7 +100,7 @@
         "name": "閃麵",
         "trueName": "雲香亭(閃麵)",
         "address": "台北市大安區新生南路三段104號",
-        "price": "75-120",
+        "price": "75 - 120",
         "expensive": false
     },
     {
@@ -108,7 +108,7 @@
         "name": "志凌小米粥",
         "trueName": "順園小館",
         "address": "台北市中正區汀州路三段281號",
-        "price": "30-400",
+        "price": "30 - 400",
         "expensive": true
     },
     {
@@ -116,7 +116,7 @@
         "name": "大盛豬排",
         "trueName": "大盛豬排專門店",
         "address": "台北市中正區羅斯福路四段52巷16弄15-1號",
-        "price": "180-230",
+        "price": "180 - 230",
         "expensive": true
     },
     {
@@ -124,7 +124,7 @@
         "name": "大一女",
         "trueName": "大一女美食餐廳",
         "address": "台北市大安區舟山路280巷",
-        "price": "60-200+",
+        "price": "60 - 200+",
         "expensive": false
     },
     {
@@ -132,7 +132,7 @@
         "name": "卓聯",
         "trueName": "台大卓聯商場",
         "address": "台北市大安區基隆路四段144巷62號",
-        "price": "40-200+",
+        "price": "40 - 200+",
         "expensive": false
     },
     {
@@ -146,9 +146,9 @@
     {
         "id": 18,
         "name": "麥當勞",
-        "trueName": "",
+        "trueName": "麥當勞(台北公館店)",
         "address": "台北市中正區羅斯福路四段76-1號",
-        "price": "90-200+",
+        "price": "90 - 200+",
         "expensive": true
     },
     {
@@ -156,7 +156,7 @@
         "name": "活大",
         "trueName": "活大餐廳",
         "address": "大安區羅斯福路四段1號第一學生活動中心",
-        "price": "30-200+",
+        "price": "30 - 200+",
         "expensive": false
     },
     {
@@ -172,7 +172,7 @@
         "name": "大埔鐵板燒",
         "trueName": "大埔鐵板燒",
         "address": "台北市中正區汀州路三段287號",
-        "price": "110-700",
+        "price": "110 - 700",
         "expensive": true
     },
     {
@@ -180,7 +180,7 @@
         "name": "水源",
         "trueName": "水源市場",
         "address": "台北市中正區羅斯福路四段92號",
-        "price": "60-200+",
+        "price": "60 - 200+",
         "expensive": false
     },
     {
@@ -188,7 +188,7 @@
         "name": "關東煮",
         "trueName": "秀食屋Shows House",
         "address": "台北市中正區羅斯福路四段78巷1弄",
-        "price": "10-∞",
+        "price": "10 - ∞",
         "expensive": false
     },
     {
@@ -196,7 +196,7 @@
         "name": "老闆麵館",
         "trueName": "維綸麵食館",
         "address": "台北市中正區汀州路三段279號",
-        "price": "30-500+",
+        "price": "30  - 500+",
         "expensive": true
     },
     {
@@ -204,7 +204,7 @@
         "name": "五九麵館",
         "trueName": "五九麵館",
         "address": "台北市大安區和平東路二段118巷59號",
-        "price": "40-100",
+        "price": "40 - 100",
         "expensive": true
     }
 ]

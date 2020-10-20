@@ -2,7 +2,6 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from "react-three-fiber";
 import { useGLTFLoader } from "drei";
 
-import './App.scss';
 
 const Model = () => {
   const gltf = useGLTFLoader('/japaneseRestaurant.gltf', true);

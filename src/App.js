@@ -1,27 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
+//custom components
 import Main from "./main";
-import './App.scss';
 import Answer from './Answer';
 
+//style
+import './App.scss';
+import './normalize.css';
 
 
 function App() {
+  const location = useLocation();
 
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route path="/answer">
-            <Answer />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <AnimatePresence exitBeforeEnter>
+      <Switch lcoation={location} key={location.pathname}>
+        <Route exact path="/" component={Main} />
+        <Route path="/answer" component={Answer} />
+        {/* <Route exact path="/">
+          <Main />
+        </Route>
+        <Route path="/answer">
+          <Answer />
+        </Route> */}
+      </Switch>
+    </AnimatePresence >
   );
 }
 

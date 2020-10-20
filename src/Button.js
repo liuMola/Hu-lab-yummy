@@ -1,17 +1,20 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Button = ({ buttonLetter }) => {
+const Button = ({ buttonLetter, path }) => {
 
     return (
         <button className="button">
-            <div className="button-inner">
-                <div className="dice">
-                    <img src="/dice64.png" alt="" />
+            <Link to={path}>
+                <div className="button-inner">
+                    <div className="dice">
+                        <img src="/dice64.png" alt="" />
+                    </div>
+                    <div className="CTA">
+                        {buttonLetter}
+                    </div>
                 </div>
-                <div className="CTA">
-                    {buttonLetter}
-                </div>
-            </div>
+            </Link>
         </button>
     );
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { motion } from "framer-motion";
 
 import Header from "./Header";
 import AnswerCard from "./AnswerCard";
@@ -7,8 +8,9 @@ import Button from "./Button";
 
 function Answer() {
     const buttonLetter = "Draw again!($10)";
+    const path = "/";
     return (
-        <section id="answer">
+        <motion.section key="answer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} id="answer" >
             <Header />
             <div className="meal-goes">
                 <div>
@@ -20,13 +22,13 @@ function Answer() {
             </div>
             <AnswerCard />
             <div className="button-wrapper">
-                <div>Don't like it?</div>
-                <Button buttonLetter={buttonLetter} />
+                <motion.div exit={{ opacity: 0 }}>Don't like it?</motion.div>
+                <Button buttonLetter={buttonLetter} path={path} />
             </div>
             <div className="jar-tsai">
                 ⓒ2020 GinNaLiJarTsai
             </div>
-        </section>
+        </motion.section>
     )
 }
 
