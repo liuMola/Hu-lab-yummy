@@ -11,7 +11,7 @@ function Card() {
 
   return (
     <>
-      <motion.div initial={{ y: 1000 }} animate={{ y: 0 }} exit={{ opacity: 0 }} className="card">
+      <motion.div className="card">
         <Store />
         <div className="text">
           Hundreds and thousands of choices are<br />

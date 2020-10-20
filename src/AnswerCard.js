@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import foodData from "./dataFood.json";
 import Store from "./Store";
+
 
 ////fix the zero problems
 const AnswerCard = () => {
@@ -8,18 +10,16 @@ const AnswerCard = () => {
 
     let { name, trueName, price, address, expensive } = foodData[foodIndex];
     let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)";
-
+    const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 1 };
 
     useEffect(() => {
         let index = Math.floor(Math.random() * foodData.length) + 1;
         setFoodIndex(foodIndex => index);
-        // sessionStorage.setItem("foodIndexStorage", index);
-        // let storageIndex = parseInt(sessionStorage.getItem("foodIndexStorage"))
     }, [])
 
     return (
         <>
-            <div className="answer-card">
+            <motion.div transition={transition} initial={{ y: 1000, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="answer-card">
                 <div className="card-inner">
                     <div className="card-top">
                         <div className="rich-or-poor">
@@ -48,7 +48,7 @@ const AnswerCard = () => {
                         <div>{address}</div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </>
     );
 }

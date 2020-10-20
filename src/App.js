@@ -17,14 +17,12 @@ function App() {
   return (
     <AnimatePresence exitBeforeEnter>
       <Switch lcoation={location} key={location.pathname}>
-        <Route exact path="/" component={Main} />
-        <Route path="/answer" component={Answer} />
-        {/* <Route exact path="/">
+        <Route exact path="/">
           <Main />
         </Route>
         <Route path="/answer">
           <Answer />
-        </Route> */}
+        </Route>
       </Switch>
     </AnimatePresence >
   );
