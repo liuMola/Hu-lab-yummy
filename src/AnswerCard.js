@@ -10,7 +10,7 @@ const AnswerCard = () => {
 
     let { name, trueName, price, address, expensive } = foodData[foodIndex];
     let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)";
-    const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 1 };
+    const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 2 };
 
     useEffect(() => {
         let index = Math.floor(Math.random() * foodData.length) + 1;
@@ -31,7 +31,7 @@ const AnswerCard = () => {
                             <div>{richOrPoor}</div>
                         </div>
                         <div className="canvas">
-                            <Store />
+                            {/* <Store /> */}
                         </div>
                         <div>{name}</div>
                     </div>

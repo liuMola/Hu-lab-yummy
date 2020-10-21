@@ -13,7 +13,7 @@
         "trueName": "鑫吉野烤肉飯公館店",
         "address": "台北市中正區羅斯福路三段286巷4弄10號",
         "price": "60 - 100",
-        "expensive": true
+        "expensive": false
     },
     {
         "id": 2,
