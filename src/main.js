@@ -36,9 +36,24 @@ const Main = () => {
 
     const [price, setPrice] = useState(null);
     const handleOnChange = (id) => {
-        let cardBackground = document.getElementsByTagName("label");
-        console.log(cardBackground)
+        // let cardBackground = document.querySelector(`#${id}`);
+        // cardBackground.style.background = "red";
+
+        let getInput = document.getElementsByTagName("input");
+        let getSlideCard = document.querySelectorAll(".slide-card");
+        console.log(!getSlideCard[0].classList.contains("checked"))
+        function checkInput() {
+            let i = 0;
+            for (i; i < getInput.length; i++) {
+                if (getInput[i].checked && !getSlideCard[i].classList.contains("checked")) {
+                    getSlideCard[i].classList.add("checked");
+                } else if (!getInput[i].checked && getSlideCard[i].classList.contains("checked")) {
+                    getSlideCard[i].classList.remove("checked");
+                }
+            }
+        }
         setPrice(id);
+        checkInput();
     }
 
     const slideLetter = {
@@ -46,19 +61,19 @@ const Main = () => {
             id: "rich",
             letter: ["Man I'm rich like a boss", "Price above 100 NTD"],
             img: "../rich.png",
-            cardClassName: "rich slide-img"
+            cardClassName: "rich slide-card"
         },
         poor: {
             id: "poor",
             letter: ["Damn I’m so poor", "Price below 100 NTD"],
             img: "../poor.png",
-            cardClassName: "poor slide-img"
+            cardClassName: "poor slide-card"
         },
         any: {
             id: "any",
             letter: ["Wa long A side", "It's time to Duuuuuel"],
             img: "../vege.png",
-            cardClassName: "any slide-img"
+            cardClassName: "any slide-card"
         }
     };
 

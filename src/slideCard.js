@@ -3,10 +3,10 @@ import React from 'react'
 function SlideCard({ slideImg, slideLetter, slideLetterPrice, cardClassName, id, handleOnChange }) {
     return (
         <label htmlFor={id}>
-            <div className="slide-card">
+            <div className={cardClassName}>
                 <div className="slide-inner">
-                    <div className={cardClassName}>
-                        <img src={slideImg} alt="" />
+                    <div className="slide-img">
+                        <img src={slideImg} alt="Slideimage" />
                     </div>
                     <div className="slide-letter">
                         <span>{slideLetter}</span>
@@ -22,17 +22,6 @@ function SlideCard({ slideImg, slideLetter, slideLetterPrice, cardClassName, id,
                 />
             </div>
         </label>
-        // <div className="slide-card">
-        //     <div className="slide-inner">
-        //         <div className={cardClassName}>
-        //             <img src={slideImg} alt="" />
-        //         </div>
-        //         <div className="slide-letter">
-        //             <span>{slideLetter}</span>
-        //             <span>{slideLetterPrice}</span>
-        //         </div>
-        //     </div>
-        // </div>
     )
 }
 

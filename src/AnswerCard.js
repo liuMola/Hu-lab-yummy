@@ -8,6 +8,15 @@ import Store from "./Store";
 const AnswerCard = () => {
     const [foodIndex, setFoodIndex] = useState(0);
 
+    let expensiveFood = [];
+    let cheapFood = [];
+    function filterFoodPrice() {
+        let i = 1;
+        for (i; i < foodData.length; i++) {
+            (foodData[i].expensive) ? expensiveFood[i] = foodData[i] : cheapFood[i] = foodData[i];
+        }
+
+    }
     let { name, trueName, price, address, expensive } = foodData[foodIndex];
     let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)";
     const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 2 };
@@ -15,6 +24,9 @@ const AnswerCard = () => {
     useEffect(() => {
         let index = Math.floor(Math.random() * foodData.length) + 1;
         setFoodIndex(foodIndex => index);
+        filterFoodPrice();
+        console.log(expensiveFood)
+        console.log(cheapFood)
     }, [])
 
     return (
