@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import Store from "./Store";
 import Button from "./Button";
 import SlideCard from "./slideCard";
 
@@ -34,23 +33,34 @@ const titleVariants = {
 const Main = () => {
     const buttonLetter = "Draw!";
     const path = "/answer";
+
+    const [price, setPrice] = useState(null);
+    const handleOnChange = (id) => {
+        let cardBackground = document.getElementsByTagName("label");
+        console.log(cardBackground)
+        setPrice(id);
+    }
+
     const slideLetter = {
         rich: {
+            id: "rich",
             letter: ["Man I'm rich like a boss", "Price above 100 NTD"],
             img: "../rich.png",
             cardClassName: "rich slide-img"
         },
         poor: {
+            id: "poor",
             letter: ["Damn I’m so poor", "Price below 100 NTD"],
             img: "../poor.png",
             cardClassName: "poor slide-img"
         },
         any: {
+            id: "any",
             letter: ["Wa long A side", "It's time to Duuuuuel"],
             img: "../vege.png",
             cardClassName: "any slide-img"
         }
-    }
+    };
 
     return (
         <div className="main">
@@ -59,7 +69,6 @@ const Main = () => {
                 <div>Draw your meal now</div>
             </motion.div>
             <motion.div initial={{ y: 1000 }} animate={{ y: 0, delay: 2 }} exit={{ y: 1000 }} transition="transition" className="card">
-                {/* <Store /> */}
                 <div className="pick">
                     <div>
                         <svg width='9px' height='10px' >
@@ -74,17 +83,24 @@ const Main = () => {
                             slideLetter={slideLetter.rich.letter[0]}
                             slideLetterPrice={slideLetter.rich.letter[1]}
                             slideImg={slideLetter.rich.img}
-                            cardClassName={slideLetter.rich.cardClassName} />
+                            cardClassName={slideLetter.rich.cardClassName}
+                            id={slideLetter.rich.id}
+                            handleOnChange={handleOnChange} />
                         <SlideCard
                             slideLetter={slideLetter.poor.letter[0]}
                             slideLetterPrice={slideLetter.poor.letter[1]}
                             slideImg={slideLetter.poor.img}
-                            cardClassName={slideLetter.poor.cardClassName} />
+                            cardClassName={slideLetter.poor.cardClassName}
+                            id={slideLetter.poor.id}
+                            handleOnChange={handleOnChange} />
                         <SlideCard
                             slideLetter={slideLetter.any.letter[0]}
                             slideLetterPrice={slideLetter.any.letter[1]}
                             slideImg={slideLetter.any.img}
-                            cardClassName={slideLetter.any.cardClassName} />
+                            cardClassName={slideLetter.any.cardClassName}
+                            id={slideLetter.any.id}
+                            handleOnChange={handleOnChange} />
+                        <div className="blank-space"></div>
                     </div>
                 </div>
                 <div className="text">
