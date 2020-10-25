@@ -36,9 +36,6 @@ const Main = () => {
 
     const [price, setPrice] = useState(null);
     const handleOnChange = (id) => {
-        // let cardBackground = document.querySelector(`#${id}`);
-        // cardBackground.style.background = "red";
-
         let getInput = document.getElementsByTagName("input");
         let getSlideCard = document.querySelectorAll(".slide-card");
         console.log(!getSlideCard[0].classList.contains("checked"))
@@ -77,13 +74,28 @@ const Main = () => {
         }
     };
 
+    //animation variables
+    const mainCardVariants = {
+        initial: { y: 1000 },
+        animate: {
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: [0.43, 0.13, 0.23, 0.9]
+            }
+        }
+    };
+
     return (
-        <div className="main">
-            <motion.div variants={titleVariants} initial="initial" animate="animate" className="main-text">
+        <motion.div exit={{ opacity: 0 }} className="main">
+            <motion.div variants={titleVariants}
+                initial="initial"
+                animate="animate"
+                className="main-text">
                 <div>Hey there!</div>
                 <div>Draw your meal now</div>
             </motion.div>
-            <motion.div initial={{ y: 1000 }} animate={{ y: 0, delay: 2 }} exit={{ y: 1000 }} transition="transition" className="card">
+            <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card">
                 <div className="pick">
                     <div>
                         <svg width='9px' height='10px' >
@@ -127,8 +139,7 @@ const Main = () => {
                     <Button buttonLetter={buttonLetter} path={path} />
                 </div>
             </motion.div>
-
-        </div>
+        </motion.div>
     );
 }
 

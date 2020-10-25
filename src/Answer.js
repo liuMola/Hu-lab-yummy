@@ -30,7 +30,7 @@ function Answer() {
     const buttonLetter = "Draw again!($10)";
     const path = "/";
     return (
-        <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} id="answer" >
+        <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="answer" >
             <motion.div initial="initial" animate="animate" variants={goesVariants} className="meal-goes">
                 <div>
                     <svg width='9px' height='10px' >
