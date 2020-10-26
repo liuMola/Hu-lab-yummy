@@ -59,6 +59,12 @@ html,
 body,
 #root {
   height: 100%;
+  // WebKit-based browsers will ignore this
+  height: -moz-available;
+  // Mozilla-based browsers will ignore this.
+  height: -webkit-fill-available;
+  // For WebKit-based browsers, Edge not support this
+  height: fill-available;
   width: 100vw;
   margin: 0%;
   padding: 0;
