@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Switch, useLocation, Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //custom components
 import Main from "./main";
@@ -12,7 +12,8 @@ import './normalize.css';
 
 
 function App() {
-  // const location = useLocation();
+  const [selectPrice, setSelectPrice] = useState(null);
+  // console.log(selectPrice);
 
   return (
     <>
@@ -24,12 +25,12 @@ function App() {
               <Route
                 exact
                 path='/'
-                render={() => <Main />}
+                render={() => <Main setSelectPrice={setSelectPrice} />}
               />
               <Route
                 exact
                 path='/answer'
-                render={() => <Answer />}
+                render={() => <Answer selectPrice={selectPrice} />}
               />
             </Switch>
           </AnimatePresence>

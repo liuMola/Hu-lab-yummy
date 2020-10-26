@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
 import AnswerCard from "./AnswerCard";
 import Button from "./Button";
+import foodData from "./dataFood.json";
 
+//animatino variables
 const goesVariants = {
     initial: { opacity: 0 },
     animate: {
@@ -26,9 +28,36 @@ const buttonVariants = {
 };
 
 
-function Answer() {
+function Answer({ selectPrice }) {
     const buttonLetter = "Draw again!($10)";
     const path = "/";
+    const [foodChoice, setFoodChoice] = useState({});
+    let foodArray = Object.values(foodData);
+    let expensiveFood = [];
+    let cheapFood = [];
+    function filterFoodPrice() {
+        let i = 1;
+        for (i; i < foodArray.length; i++) {
+            (foodArray[i].expensive) ? expensiveFood.push(foodArray[i]) : cheapFood.push(foodArray[i]);
+        }
+    }
+    const filter = () => {
+        if (selectPrice === "rich") {
+            return expensiveFood[Math.floor(Math.random() * expensiveFood.length)]
+        } else if (selectPrice === "poor") {
+            return cheapFood[Math.floor(Math.random() * cheapFood.length)]
+        } else {
+            return foodData[Math.floor(Math.random() * foodData.length)]
+        }
+    }
+    console.log(selectPrice)
+
+    useEffect(() => {
+        filterFoodPrice();
+        let choice = filter()
+        setFoodChoice(foodChoice => choice);
+    }, [])
+
     return (
         <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="answer" >
             <motion.div initial="initial" animate="animate" variants={goesVariants} className="meal-goes">
@@ -39,7 +68,7 @@ function Answer() {
                 </div>
                 <div>Your meal goes to</div>
             </motion.div>
-            <AnswerCard />
+            <AnswerCard foodChoice={foodChoice} />
             <motion.div initial="initial" animate="animate" variants={buttonVariants} className="button-wrapper">
                 <div >Don't like it?</div>
                 <Button buttonLetter={buttonLetter} path={path} />

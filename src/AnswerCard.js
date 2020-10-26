@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
-import foodData from "./dataFood.json";
+
 import Store from "./Store";
 
+const AnswerCard = ({ foodChoice }) => {
 
-////fix the zero problems
-const AnswerCard = () => {
-    const [foodIndex, setFoodIndex] = useState(0);
-
-    let expensiveFood = [];
-    let cheapFood = [];
-    function filterFoodPrice() {
-        let i = 1;
-        for (i; i < foodData.length; i++) {
-            (foodData[i].expensive) ? expensiveFood[i] = foodData[i] : cheapFood[i] = foodData[i];
-        }
-
-    }
-    let { name, trueName, price, address, expensive } = foodData[foodIndex];
-    let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)";
     const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 2 };
 
-    useEffect(() => {
-        let index = Math.floor(Math.random() * foodData.length) + 1;
-        setFoodIndex(foodIndex => index);
-        filterFoodPrice();
-        console.log(expensiveFood)
-        console.log(cheapFood)
-    }, [])
+
+    let { name, trueName, price, address, expensive } = foodChoice;
+    console.log(foodChoice)
+    let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)"
 
     return (
         <>
@@ -43,7 +26,7 @@ const AnswerCard = () => {
                             <div>{richOrPoor}</div>
                         </div>
                         <div className="canvas">
-                            {/* <Store /> */}
+                            <Store />
                         </div>
                         <div>{name}</div>
                     </div>

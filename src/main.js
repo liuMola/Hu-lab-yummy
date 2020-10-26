@@ -30,7 +30,7 @@ const titleVariants = {
 };
 
 
-const Main = () => {
+const Main = ({ setSelectPrice }) => {
     const buttonLetter = "Draw!";
     const path = "/answer";
 
@@ -38,7 +38,6 @@ const Main = () => {
     const handleOnChange = (id) => {
         let getInput = document.getElementsByTagName("input");
         let getSlideCard = document.querySelectorAll(".slide-card");
-        console.log(!getSlideCard[0].classList.contains("checked"))
         function checkInput() {
             let i = 0;
             for (i; i < getInput.length; i++) {
@@ -51,6 +50,7 @@ const Main = () => {
         }
         setPrice(id);
         checkInput();
+        setSelectPrice(id);
     }
 
     const slideLetter = {
