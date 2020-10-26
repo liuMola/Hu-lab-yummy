@@ -4,9 +4,9 @@ import { useGLTFLoader } from "drei";
 
 
 const Model = () => {
-  // const gltf = useGLTFLoader('/japaneseRestaurant.gltf', true);
+  const gltf = useGLTFLoader('/japaneseRestaurant.gltf', true);
   // const gltf = useGLTFLoader('/brewery.gltf', true);
-  const gltf = useGLTFLoader('/iceCream.gltf', true);
+  // const gltf = useGLTFLoader('/iceCream.gltf', true);
   const mesh = useRef();
   useFrame(() => (mesh.current.rotation.y += 0.01));
   return (

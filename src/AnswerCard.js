@@ -6,8 +6,6 @@ import Store from "./Store";
 const AnswerCard = ({ foodChoice }) => {
 
     const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 2 };
-
-
     let { name, trueName, price, address, expensive } = foodChoice;
     console.log(foodChoice)
     let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)"
