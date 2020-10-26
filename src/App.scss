@@ -158,7 +158,6 @@ body {
   z-index: 5;
 }
 
-
 //general setting
 .button-wrapper {
   position: absolute;
@@ -351,6 +350,10 @@ body {
     scrollbar-width: none;
     transform: translateY(10%);
     float: right;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .blank-space {
       position: relative;
