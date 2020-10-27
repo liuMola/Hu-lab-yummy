@@ -13,7 +13,11 @@ import './normalize.css';
 
 function App() {
   const [selectPrice, setSelectPrice] = useState(null);
-  // console.log(selectPrice);
+
+  window.addEventListener('resize', () => {
+    document.querySelector(':root').style
+      .setProperty('--vh', window.innerHeight / 100 + 'px');
+  })
 
   return (
     <>
