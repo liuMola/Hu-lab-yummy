@@ -95,7 +95,8 @@ const Main = ({ setSelectPrice }) => {
                 <div>Hey there!</div>
                 <div>Draw your meal now</div>
             </motion.div>
-            <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card">
+            {/* <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card"> */}
+            <motion.div className="card">
                 <div className="pick">
                     <div>
                         <svg width='9px' height='10px' >

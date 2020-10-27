@@ -17,26 +17,29 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Route
-        render={({ location }) => (
-          <AnimatePresence exitBeforeEnter>
-            <Switch location={location} key={location.pathname}>
-              <Route
-                exact
-                path='/'
-                render={() => <Main setSelectPrice={setSelectPrice} />}
-              />
-              <Route
-                exact
-                path='/answer'
-                render={() => <Answer selectPrice={selectPrice} />}
-              />
-            </Switch>
-          </AnimatePresence>
-        )}
-      />
-      <div className="jar-tsai">ⓒ2020 GinNaLiJarTsai</div>
+      <div className="main-wrapper">
+        <Header />
+        <Route
+          render={({ location }) => (
+            <AnimatePresence exitBeforeEnter>
+              <Switch location={location} key={location.pathname}>
+                <Route
+                  exact
+                  path='/'
+                  render={() => <Main setSelectPrice={setSelectPrice} />}
+                />
+                <Route
+                  exact
+                  path='/answer'
+                  render={() => <Answer selectPrice={selectPrice} />}
+                />
+              </Switch>
+            </AnimatePresence>
+          )}
+        />
+        <div className="jar-tsai">ⓒ2020 GinNaLiJarTsai</div>
+      </div>
+
     </>
   );
 }
