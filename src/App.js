@@ -9,15 +9,20 @@ import Header from "./Header";
 //style
 import './App.scss';
 import './normalize.css';
+window.addEventListener('resize', () => {
+  document.querySelector(':root').style
+    .setProperty('--vh', window.innerHeight / 100 + 'px');
+})
 
+window.addEventListener("load", () => {
+  document.querySelector(':root').style
+    .setProperty('--vh', window.innerHeight / 100 + 'px');
+})
 
 function App() {
   const [selectPrice, setSelectPrice] = useState(null);
 
-  window.addEventListener('resize', () => {
-    document.querySelector(':root').style
-      .setProperty('--vh', window.innerHeight / 100 + 'px');
-  })
+
 
   return (
     <>

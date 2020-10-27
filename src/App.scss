@@ -79,6 +79,7 @@ body {
 .main-wrapper {
   height: calc(100 * var(--vh));
   width: 100%;
+  overflow: hidden;
 }
 
 //header
@@ -133,7 +134,7 @@ body {
   align-items: center;
   height: 75vh;
   width: 100%;
-  bottom: 0;
+  bottom: -10px;
   background: $white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
