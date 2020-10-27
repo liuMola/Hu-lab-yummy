@@ -59,12 +59,13 @@ html,
 body,
 #root {
   height: calc(100 * var(--vh));
-  // // WebKit-based browsers will ignore this
-  // height: -moz-available;
-  // // Mozilla-based browsers will ignore this.
-  // height: -webkit-fill-available;
-  // // For WebKit-based browsers, Edge not support this
-  // height: fill-available;
+  height: 100%;
+  // WebKit-based browsers will ignore this
+  min-height: -moz-available;
+  // Mozilla-based browsers will ignore this.
+  min-height: -webkit-fill-available;
+  // For WebKit-based browsers, Edge not support this
+  min-height: fill-available;
   width: 100vw;
   margin: 0%;
   padding: 0;
@@ -101,6 +102,8 @@ body {
     }
 
     .yummy {
+      width: 220px;
+
       img {
         width: 50%;
         float: right;

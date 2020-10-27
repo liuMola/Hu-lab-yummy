@@ -8,7 +8,7 @@ const Header = () => {
                     HU LAB
                 </div>
                 <div className="yummy">
-                    <img src="/yummy2.svg" alt="" />
+                    <img src="/yummy2.svg" alt="Yummy" />
                 </div>
             </div>
         </div>

@@ -22,8 +22,6 @@ window.addEventListener("load", () => {
 function App() {
   const [selectPrice, setSelectPrice] = useState(null);
 
-
-
   return (
     <>
       <div className="main-wrapper">
