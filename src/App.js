@@ -9,44 +9,32 @@ import Header from "./Header";
 //style
 import './App.scss';
 import './normalize.css';
-window.addEventListener('resize', () => {
-  document.querySelector(':root').style
-    .setProperty('--vh', window.innerHeight / 100 + 'px');
-})
-
-window.addEventListener("load", () => {
-  document.querySelector(':root').style
-    .setProperty('--vh', window.innerHeight / 100 + 'px');
-})
 
 function App() {
   const [selectPrice, setSelectPrice] = useState(null);
 
   return (
     <>
-      <div className="main-wrapper">
-        <Header />
-        <Route
-          render={({ location }) => (
-            <AnimatePresence exitBeforeEnter>
-              <Switch location={location} key={location.pathname}>
-                <Route
-                  exact
-                  path='/'
-                  render={() => <Main setSelectPrice={setSelectPrice} />}
-                />
-                <Route
-                  exact
-                  path='/answer'
-                  render={() => <Answer selectPrice={selectPrice} />}
-                />
-              </Switch>
-            </AnimatePresence>
-          )}
-        />
-        <div className="jar-tsai">ⓒ2020 GinNaLiJarTsai</div>
-      </div>
-
+      <Header />
+      <Route
+        render={({ location }) => (
+          <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.pathname}>
+              <Route
+                exact
+                path='/'
+                render={() => <Main setSelectPrice={setSelectPrice} />}
+              />
+              <Route
+                exact
+                path='/answer'
+                render={() => <Answer selectPrice={selectPrice} />}
+              />
+            </Switch>
+          </AnimatePresence>
+        )}
+      />
+      <div className="jar-tsai">ⓒ2020 GinNaLiJarTsai</div>
     </>
   );
 }

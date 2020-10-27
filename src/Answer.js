@@ -56,6 +56,7 @@ function Answer({ selectPrice }) {
         filterFoodPrice();
         let choice = filter()
         setFoodChoice(foodChoice => choice);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

@@ -3,9 +3,8 @@ $heavy-yellow: #ECC77D;
 $light-yellow: #FDECD2;
 $heavy-metal: #212121;
 $white: #F8F8F8;
-
+//transition ease
 $ease: cubic-bezier(0.43, 0.13, 0.23, 0.9);
-
 //fontface
 $Apercu: Apercu,
 sans-serif;
@@ -17,8 +16,11 @@ $Goldman-medium: Goldmansans-Med,
 sans-serif;
 $Romantically: Romantically,
 sans-serif;
-$PingFong: PingFong,
+$GenSenMaru-bold: GenSenMaru-Bold,
 sans-serif;
+$GenSenMaru-medium: GenSenMaru-Medium,
+sans-serif;
+
 
 @font-face {
   font-family: 'Goldmansans';
@@ -49,16 +51,29 @@ sans-serif;
 }
 
 @font-face {
-  font-family: 'PingFong';
+  font-family: 'GenSenMaru-Bold';
   src:
-    url('./font/PingFangHK-Regular.woff2') format('woff2'),
-    url('./font/PingFangHK-Regular.otf') format('opentype');
+    url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
+    url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru-Bold';
+  src:
+    url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
+    url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GenSenMaru-Medium';
+  src:
+    url('./font/GenSenMaruGothicTW-Medium.woff2') format('woff2'),
+    url('./font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
 }
 
 html,
 body,
 #root {
-  height: calc(100 * var(--vh));
   height: 100%;
   // WebKit-based browsers will ignore this
   min-height: -moz-available;
@@ -74,20 +89,15 @@ body,
 }
 
 body {
+  position: relative;
   background: $heavy-yellow;
-}
-
-.main-wrapper {
-  height: calc(100 * var(--vh));
-  width: 100%;
-  overflow: hidden;
 }
 
 //header
 .header {
   position: absolute;
   width: 100%;
-  top: 2.5%;
+  top: 2%;
   z-index: 5;
 
   .header-inner {
@@ -97,12 +107,13 @@ body {
     padding: 0 25px 0 40px;
 
     .hu-lab {
+      transform: translateY(-6px);
       font-family: "Futura", sans-serif;
       font-size: calc(10px + 0.5vw);
     }
 
     .yummy {
-      width: 220px;
+      width: 200px;
 
       img {
         width: 50%;
@@ -135,9 +146,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75vh;
+  height: 75%;
   width: 100%;
-  bottom: -10px;
+  bottom: 0;
   background: $white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -161,7 +172,7 @@ body {
 }
 
 .canvas {
-  height: 30vh !important;
+  height: 30% !important;
   width: 90% !important;
   margin: 5% 5% 10% 5%;
   z-index: 5;
@@ -212,133 +223,6 @@ body {
           font-size: 19px;
         }
       }
-    }
-  }
-}
-
-//answerCard
-#answer {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background: $white;
-  font-family: $PingFong;
-
-  .meal-goes {
-    position: relative;
-    display: flex;
-    align-items: center;
-    top: 11%;
-    left: -22%;
-
-    div:nth-child(2) {
-      margin-left: 10px;
-      font-family: $Apercu;
-    }
-  }
-
-  .answer-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: $light-yellow;
-    height: 55vh;
-    width: 80%;
-    top: 13%;
-    border-radius: 30px;
-    box-shadow: 7px 7px 13px 0px rgba(0, 0, 0, 0.1);
-
-    .card-top {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .rich-or-poor {
-        position: relative;
-        display: flex;
-        align-items: center;
-        left: -15%;
-        font-family: $PingFong;
-        font-size: 12px;
-        opacity: 0.6;
-
-        div:nth-child(2) {
-          margin-left: 8px;
-        }
-      }
-
-      div:nth-child(3) {
-        font-weight: bold;
-        font-size: 28px;
-        margin: 3% 0 5% 0;
-      }
-    }
-
-    .canvas {
-      height: 20vh !important;
-      width: 90% !important;
-    }
-
-
-    .hz-line {
-      background: $heavy-metal;
-      height: 0.7px;
-      width: 100%;
-      opacity: 0.5;
-    }
-
-    .card-info {
-      margin: 5% 0 0 40px;
-
-      .price {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
-        font-weight: bold;
-        transform: translateX(-5%);
-        margin-bottom: 2.5%;
-
-        span:nth-child(2) {
-          padding-left: 8px;
-          font-size: 12px;
-          align-self: flex-end;
-        }
-
-        .coin {
-          margin-right: 7px;
-
-          img {
-            width: 23px;
-          }
-        }
-      }
-
-      div:nth-child(2) {
-        font-size: 18px;
-        font-weight: bold;
-        opacity: 0.8;
-      }
-
-      div:nth-child(3) {
-        margin: 5px 10% 0 0;
-        font-size: 14px;
-        opacity: 0.5;
-      }
-    }
-  }
-
-  .button-wrapper {
-    div:nth-child(1) {
-      font-size: 18px;
-    }
-
-    .button {
-      width: calc(200px + 10vw);
     }
   }
 }
@@ -467,6 +351,136 @@ body {
 
     .slide-img {
       transform: rotateZ(12deg);
+    }
+  }
+}
+
+#answer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: $white;
+
+  .meal-goes {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top: 11%;
+    left: -22%;
+
+    div:nth-child(2) {
+      margin-left: 10px;
+      font-family: $Apercu;
+    }
+  }
+
+  .answer-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $light-yellow;
+    height: 55%;
+    width: 75%;
+    top: 13%;
+    border-radius: 30px;
+    box-shadow: 7px 7px 13px 0px rgba(0, 0, 0, 0.1);
+
+    .card-top {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .rich-or-poor {
+        position: relative;
+        display: flex;
+        align-items: center;
+        left: -15%;
+        font-family: $GenSenMaru-medium;
+        font-size: 11.3px;
+        opacity: 0.6;
+
+        div:nth-child(2) {
+          margin-left: 8px;
+        }
+      }
+
+      div:nth-child(3) {
+        font-family: $GenSenMaru-bold;
+        font-size: 26px;
+        margin: 3% 0 7% 0;
+      }
+    }
+
+    .canvas {
+      height: 18vh !important;
+      width: 90% !important;
+    }
+
+
+    .hz-line {
+      background: $heavy-metal;
+      height: 0.7px;
+      width: 100%;
+      opacity: 0.5;
+    }
+
+    .card-info {
+      margin: 5% 0 0 30px;
+      color: $heavy-metal;
+
+      .price {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-family: $GenSenMaru-bold;
+        transform: translateX(-5%);
+        opacity: 0.7;
+
+        span:nth-child(2) {
+          padding-left: 6px;
+          font-size: 11px;
+          transform: translateY(4px);
+        }
+
+        .coin {
+          margin: 4px 7px 0 0;
+
+          img {
+            width: 23px;
+          }
+        }
+      }
+
+      div:nth-child(2) {
+        padding-top: 5px;
+        padding-left: 16px;
+        font-size: 16px;
+        font-family: $GenSenMaru-medium;
+        opacity: 0.9;
+      }
+
+      div:nth-child(3) {
+        margin: 5px 10% 0 0;
+        padding-left: 16px;
+        font-size: 12px;
+        font-family: $GenSenMaru-medium;
+        opacity: 0.43;
+      }
+    }
+  }
+
+  .button-wrapper {
+    div:nth-child(1) {
+      font-size: 18px;
+    }
+
+    .button {
+      width: calc(200px + 10vw);
     }
   }
 }

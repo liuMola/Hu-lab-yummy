@@ -5,24 +5,24 @@ import Button from "./Button";
 import SlideCard from "./slideCard";
 
 
-const mainVariants = {
-    initial: { y: 1000 },
-    animate: {
-        y: 0, transition: {
-            duration: 2,
-            delay: 3
-        }
-    },
-    exit: {
-        y: 1000,
-        transition: {
-            duration: 2,
-            opacity: {
-                delay: 3
-            }
-        }
-    },
-};
+// const mainVariants = {
+//     initial: { y: 1000 },
+//     animate: {
+//         y: 0, transition: {
+//             duration: 2,
+//             delay: 3
+//         }
+//     },
+//     exit: {
+//         y: 1000,
+//         transition: {
+//             duration: 2,
+//             opacity: {
+//                 delay: 3
+//             }
+//         }
+//     },
+// };
 
 const titleVariants = {
     initial: { opacity: 0 },
@@ -35,6 +35,7 @@ const Main = ({ setSelectPrice }) => {
     const path = "/answer";
 
     const [price, setPrice] = useState(null);
+    console.log(price)
     const handleOnChange = (id) => {
         let getInput = document.getElementsByTagName("input");
         let getSlideCard = document.querySelectorAll(".slide-card");
@@ -75,16 +76,16 @@ const Main = ({ setSelectPrice }) => {
     };
 
     //animation variables
-    const mainCardVariants = {
-        initial: { y: 1000 },
-        animate: {
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: [0.43, 0.13, 0.23, 0.9]
-            }
-        }
-    };
+    // const mainCardVariants = {
+    //     initial: { y: 1000 },
+    //     animate: {
+    //         y: 0,
+    //         transition: {
+    //             duration: 0.6,
+    //             ease: [0.43, 0.13, 0.23, 0.9]
+    //         }
+    //     }
+    // };
 
     return (
         <motion.div exit={{ opacity: 0 }} className="main">
