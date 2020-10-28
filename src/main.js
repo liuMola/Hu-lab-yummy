@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Button from "./Button";
 import SlideCard from "./slideCard";
-
+import Loading from './loading';
 
 // const mainVariants = {
 //     initial: { y: 1000 },
@@ -29,13 +29,14 @@ const titleVariants = {
     animate: { opacity: 1 }
 };
 
-
 const Main = ({ setSelectPrice }) => {
     const buttonLetter = "Draw!";
     const path = "/answer";
 
+    //State
     const [price, setPrice] = useState(null);
-    console.log(price)
+
+
     const handleOnChange = (id) => {
         let getInput = document.getElementsByTagName("input");
         let getSlideCard = document.querySelectorAll(".slide-card");
@@ -54,6 +55,7 @@ const Main = ({ setSelectPrice }) => {
         setSelectPrice(id);
     }
 
+    //props variables
     const slideLetter = {
         rich: {
             id: "rich",
@@ -88,60 +90,63 @@ const Main = ({ setSelectPrice }) => {
     // };
 
     return (
-        <motion.div exit={{ opacity: 0 }} className="main">
-            <motion.div variants={titleVariants}
-                initial="initial"
-                animate="animate"
-                className="main-text">
-                <div>Hey there!</div>
-                <div>Draw your meal now</div>
-            </motion.div>
-            {/* <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card"> */}
-            <motion.div className="card">
-                <div className="pick">
-                    <div>
-                        <svg width='9px' height='10px' >
-                            <path d=" M 0 0  L9 4 L 0 8 Z " />
-                        </svg>
+        <>
+            <Loading />
+            <motion.div exit={{ opacity: 0 }} className="main">
+                <motion.div variants={titleVariants}
+                    initial="initial"
+                    animate="animate"
+                    className="main-text">
+                    <div>Hey there!</div>
+                    <div>Draw your meal now</div>
+                </motion.div>
+                {/* <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card"> */}
+                <motion.div className="card">
+                    <div className="pick">
+                        <div>
+                            <svg width='9px' height='10px' >
+                                <path d=" M 0 0  L9 4 L 0 8 Z " />
+                            </svg>
+                        </div>
+                        <div>Pick a price</div>
                     </div>
-                    <div>Pick a price</div>
-                </div>
-                <div className="slide-wrapper">
-                    <div className="slide-wrapper-inner">
-                        <SlideCard
-                            slideLetter={slideLetter.rich.letter[0]}
-                            slideLetterPrice={slideLetter.rich.letter[1]}
-                            slideImg={slideLetter.rich.img}
-                            cardClassName={slideLetter.rich.cardClassName}
-                            id={slideLetter.rich.id}
-                            handleOnChange={handleOnChange} />
-                        <SlideCard
-                            slideLetter={slideLetter.poor.letter[0]}
-                            slideLetterPrice={slideLetter.poor.letter[1]}
-                            slideImg={slideLetter.poor.img}
-                            cardClassName={slideLetter.poor.cardClassName}
-                            id={slideLetter.poor.id}
-                            handleOnChange={handleOnChange} />
-                        <SlideCard
-                            slideLetter={slideLetter.any.letter[0]}
-                            slideLetterPrice={slideLetter.any.letter[1]}
-                            slideImg={slideLetter.any.img}
-                            cardClassName={slideLetter.any.cardClassName}
-                            id={slideLetter.any.id}
-                            handleOnChange={handleOnChange} />
-                        <div className="blank-space"></div>
+                    <div className="slide-wrapper">
+                        <div className="slide-wrapper-inner">
+                            <SlideCard
+                                slideLetter={slideLetter.rich.letter[0]}
+                                slideLetterPrice={slideLetter.rich.letter[1]}
+                                slideImg={slideLetter.rich.img}
+                                cardClassName={slideLetter.rich.cardClassName}
+                                id={slideLetter.rich.id}
+                                handleOnChange={handleOnChange} />
+                            <SlideCard
+                                slideLetter={slideLetter.poor.letter[0]}
+                                slideLetterPrice={slideLetter.poor.letter[1]}
+                                slideImg={slideLetter.poor.img}
+                                cardClassName={slideLetter.poor.cardClassName}
+                                id={slideLetter.poor.id}
+                                handleOnChange={handleOnChange} />
+                            <SlideCard
+                                slideLetter={slideLetter.any.letter[0]}
+                                slideLetterPrice={slideLetter.any.letter[1]}
+                                slideImg={slideLetter.any.img}
+                                cardClassName={slideLetter.any.cardClassName}
+                                id={slideLetter.any.id}
+                                handleOnChange={handleOnChange} />
+                            <div className="blank-space"></div>
+                        </div>
                     </div>
-                </div>
-                <div className="text">
-                    Hundreds and thousands of choices are<br />
-                    waiting here for you!
-                </div>
-                <div className="button-wrapper">
-                    <div>Save your meal!</div>
-                    <Button buttonLetter={buttonLetter} path={path} />
-                </div>
+                    <div className="text">
+                        Hundreds and thousands of choices are<br />
+                            waiting here for you!
+                        </div>
+                    <div className="button-wrapper">
+                        <div>Save your meal!</div>
+                        <Button buttonLetter={buttonLetter} path={path} />
+                    </div>
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </>
     );
 }
 

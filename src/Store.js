@@ -10,7 +10,7 @@ const Model = () => {
   const mesh = useRef();
   useFrame(() => (mesh.current.rotation.y += 0.01));
   return (
-    <mesh ref={mesh} position={[0, -7, 0]}>
+    <mesh ref={mesh} position={[0, -7, -5]}>
       <primitive object={gltf.scene} dispose={null} />
     </mesh>
   )

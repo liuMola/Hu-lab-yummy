@@ -1,75 +1,4 @@
-//variables
-$heavy-yellow: #ECC77D;
-$light-yellow: #FDECD2;
-$heavy-metal: #212121;
-$white: #F8F8F8;
-//transition ease
-$ease: cubic-bezier(0.43, 0.13, 0.23, 0.9);
-//fontface
-$Apercu: Apercu,
-sans-serif;
-$Goldman-regular: Goldmansans,
-sans-serif;
-$Goldman-bold: Goldmansans-Bold,
-sans-serif;
-$Goldman-medium: Goldmansans-Med,
-sans-serif;
-$Romantically: Romantically,
-sans-serif;
-$GenSenMaru-bold: GenSenMaru-Bold,
-sans-serif;
-$GenSenMaru-medium: GenSenMaru-Medium,
-sans-serif;
-
-
-@font-face {
-  font-family: 'Goldmansans';
-  src:
-    url('./font/GoldmanSans_W_Rg.woff2') format('woff2'),
-    url('./font/GoldmanSans_Rg.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Goldmansans-Med';
-  src:
-    url('./font/GoldmanSans_W_Md.woff2') format('woff2'),
-    url('./font/GoldmanSans_Md.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Goldmansans-Bold';
-  src:
-    url('./font/GoldmanSans_W_Bd.woff2') format('woff2'),
-    url('./font/GoldmanSans_Bd.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Apercu';
-  src:
-    url('./font/Apercu_Re.woff2') format('woff2'),
-    url('./font/Apercu_Re.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'GenSenMaru-Bold';
-  src:
-    url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
-    url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'GenSenMaru-Bold';
-  src:
-    url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
-    url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'GenSenMaru-Medium';
-  src:
-    url('./font/GenSenMaruGothicTW-Medium.woff2') format('woff2'),
-    url('./font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
-}
+@import "_variables.scss";
 
 html,
 body,
@@ -93,6 +22,43 @@ body {
   background: $heavy-yellow;
 }
 
+//loading-page
+.loading-wrapper {
+  position: absolute;
+  @include flex($flexDirection: null);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #f3f3f3;
+  z-index: 10;
+
+  .loading-inner {
+    position: relative;
+    @include flex;
+    height: 90%;
+
+    .loading-logo {
+      width: fit-content;
+      transform: translateY(-20px);
+
+      img {
+        width: 70%;
+        float: right;
+      }
+    }
+
+    .hu-lab {
+      position: absolute;
+      bottom: 0;
+      font-size: 10px;
+      letter-spacing: 2px;
+      opacity: 0.8;
+    }
+  }
+}
+
+
 //header
 .header {
   position: absolute;
@@ -101,9 +67,7 @@ body {
   z-index: 5;
 
   .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex ($justifyContent: space-between, $flexDirection: null);
     padding: 0 25px 0 40px;
 
     .hu-lab {
@@ -143,9 +107,7 @@ body {
 //card
 .card {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex ($justifyContent: null);
   height: 75%;
   width: 100%;
   bottom: 0;
@@ -181,9 +143,7 @@ body {
 //general setting
 .button-wrapper {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex ($justifyContent: null);
   bottom: 10%;
 
   div:nth-child(1) {
@@ -193,22 +153,20 @@ body {
   }
 
   .button {
-    background: $heavy-yellow;
+    border: none;
+    margin-top: 15px;
     height: 60px;
     width: 151px;
     border-radius: 30px;
     box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.09);
-    border: none;
-    margin-top: 15px;
+    background: $heavy-yellow;
 
     a {
       color: $heavy-metal;
       text-decoration: none;
 
       .button-inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex($flexDirection: null);
 
         .dice {
           img {
@@ -234,8 +192,7 @@ body {
   width: 100%;
 
   .slide-wrapper-inner {
-    display: flex;
-    align-items: center;
+    @include flex($justifyContent: null, $flexDirection: null);
     height: 100%;
     width: 300px;
     padding-left: 15%;
@@ -273,8 +230,7 @@ body {
 
     .slide-inner {
       position: relative;
-      display: flex;
-      flex-direction: column;
+      @include flex($alignItems: null, $justifyContent: null);
       height: 90%;
       min-height: 190px;
 
@@ -286,8 +242,7 @@ body {
 
       .slide-letter {
         position: absolute;
-        display: flex;
-        flex-direction: column;
+        @include flex($alignItems: null, $justifyContent: null);
         bottom: 0%;
         margin: 0 10% 0 15%;
 
@@ -357,17 +312,14 @@ body {
 
 #answer {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex($justifyContent: null);
   height: 100%;
   width: 100%;
   background: $white;
 
   .meal-goes {
     position: relative;
-    display: flex;
-    align-items: center;
+    @include flex($justifyContent: null, $flexDirection: null);
     top: 11%;
     left: -22%;
 
@@ -379,9 +331,7 @@ body {
 
   .answer-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex($alignItems: null, $justifyContent: center);
     background: $light-yellow;
     height: 55%;
     width: 75%;
@@ -391,14 +341,11 @@ body {
 
     .card-top {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex(center, null);
 
       .rich-or-poor {
         position: relative;
-        display: flex;
-        align-items: center;
+        @include flex($justifyContent: null, $flexDirection: null);
         left: -15%;
         font-family: $GenSenMaru-medium;
         font-size: 11.3px;
@@ -434,8 +381,7 @@ body {
       color: $heavy-metal;
 
       .price {
-        display: flex;
-        align-items: center;
+        @include flex($justifyContent: null, $flexDirection: null);
         font-size: 20px;
         font-family: $GenSenMaru-bold;
         transform: translateX(-5%);
@@ -487,10 +433,9 @@ body {
 
 .pick {
   position: relative;
-  display: flex;
-  align-items: center;
-  left: -27%;
+  @include flex($justifyContent: null, $flexDirection: null);
   top: calc(5% + 1vh);
+  left: -27%;
 
   div:nth-child(2) {
     font-size: 14px;

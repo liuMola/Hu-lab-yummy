@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //custom components
+
 import Main from "./main";
 import Answer from './Answer';
 import Header from "./Header";
@@ -12,6 +13,13 @@ import './normalize.css';
 
 function App() {
   const [selectPrice, setSelectPrice] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false)
+      , 3000)
+    console.log(loading)
+  }, [])
 
   return (
     <>
