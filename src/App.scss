@@ -99,7 +99,7 @@ body {
 
   div:nth-child(2) {
     font-family: $Goldman-bold;
-    font-size: 28px;
+    font-size: 26px;
     padding-top: 2%;
   }
 }
@@ -238,6 +238,11 @@ body {
         width: 100%;
         height: 100%;
         transition: transform 300ms $ease;
+
+        picture {
+          width: 100px;
+          height: 100px;
+        }
       }
 
       .slide-letter {

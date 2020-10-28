@@ -1,28 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //custom components
-
+import Loading from "./loading";
+import Header from "./Header";
 import Main from "./main";
 import Answer from './Answer';
-import Header from "./Header";
-
 //style
 import './App.scss';
 import './normalize.css';
 
-function App() {
+const App = () => {
   const [selectPrice, setSelectPrice] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false)
-      , 3000)
-    console.log(loading)
-  }, [])
 
   return (
     <>
+      <Loading />
       <Header />
       <Route
         render={({ location }) => (

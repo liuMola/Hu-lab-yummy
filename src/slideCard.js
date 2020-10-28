@@ -1,12 +1,16 @@
 import React from 'react'
 
-function SlideCard({ slideImg, slideLetter, slideLetterPrice, cardClassName, id, handleOnChange }) {
+function SlideCard({ slideImg, slideWebp, slideLetter, slideLetterPrice, cardClassName, id, handleOnChange }) {
     return (
         <label htmlFor={id}>
             <div className={cardClassName}>
                 <div className="slide-inner">
                     <div className="slide-img">
-                        <img src={slideImg} alt="Slideimage" />
+                        <picture>
+                            <source srcSet={slideWebp} type="image/webp" />
+                            <source srcSet={slideImg} type="image/png" />
+                            <img src={slideWebp} alt="slidImage" />
+                        </picture>
                     </div>
                     <div className="slide-letter">
                         <span>{slideLetter}</span>

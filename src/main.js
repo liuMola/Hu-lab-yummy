@@ -3,31 +3,7 @@ import { motion } from "framer-motion";
 
 import Button from "./Button";
 import SlideCard from "./slideCard";
-import Loading from './loading';
 
-// const mainVariants = {
-//     initial: { y: 1000 },
-//     animate: {
-//         y: 0, transition: {
-//             duration: 2,
-//             delay: 3
-//         }
-//     },
-//     exit: {
-//         y: 1000,
-//         transition: {
-//             duration: 2,
-//             opacity: {
-//                 delay: 3
-//             }
-//         }
-//     },
-// };
-
-const titleVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 }
-};
 
 const Main = ({ setSelectPrice }) => {
     const buttonLetter = "Draw!";
@@ -35,7 +11,6 @@ const Main = ({ setSelectPrice }) => {
 
     //State
     const [price, setPrice] = useState(null);
-
 
     const handleOnChange = (id) => {
         let getInput = document.getElementsByTagName("input");
@@ -60,38 +35,45 @@ const Main = ({ setSelectPrice }) => {
         rich: {
             id: "rich",
             letter: ["Man I'm rich like a boss", "Price above 100 NTD"],
+            webp: "../rich.webp",
             img: "../rich.png",
             cardClassName: "rich slide-card"
         },
         poor: {
             id: "poor",
             letter: ["Damn I’m so poor", "Price below 100 NTD"],
+            webp: "../poor.webp",
             img: "../poor.png",
             cardClassName: "poor slide-card"
         },
         any: {
             id: "any",
             letter: ["Wa long A side", "It's time to Duuuuuel"],
+            webp: "../vege.webp",
             img: "../vege.png",
             cardClassName: "any slide-card"
         }
     };
 
     //animation variables
-    // const mainCardVariants = {
-    //     initial: { y: 1000 },
-    //     animate: {
-    //         y: 0,
-    //         transition: {
-    //             duration: 0.6,
-    //             ease: [0.43, 0.13, 0.23, 0.9]
-    //         }
-    //     }
-    // };
+    const mainCardVariants = {
+        initial: { y: 1000 },
+        animate: {
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.43, 0.13, 0.23, 0.9]
+            }
+        }
+    };
+
+    const titleVariants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 }
+    };
 
     return (
         <>
-            <Loading />
             <motion.div exit={{ opacity: 0 }} className="main">
                 <motion.div variants={titleVariants}
                     initial="initial"
@@ -100,12 +82,12 @@ const Main = ({ setSelectPrice }) => {
                     <div>Hey there!</div>
                     <div>Draw your meal now</div>
                 </motion.div>
-                {/* <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card"> */}
-                <motion.div className="card">
+                <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card">
+                    {/* <motion.div className="card"> */}
                     <div className="pick">
                         <div>
                             <svg width='9px' height='10px' >
-                                <path d=" M 0 0  L9 4 L 0 8 Z " />
+                                <path d=" M 0 0 L9 4 L 0 8 Z " />
                             </svg>
                         </div>
                         <div>Pick a price</div>
@@ -115,6 +97,7 @@ const Main = ({ setSelectPrice }) => {
                             <SlideCard
                                 slideLetter={slideLetter.rich.letter[0]}
                                 slideLetterPrice={slideLetter.rich.letter[1]}
+                                slideWebp={slideLetter.rich.webp}
                                 slideImg={slideLetter.rich.img}
                                 cardClassName={slideLetter.rich.cardClassName}
                                 id={slideLetter.rich.id}
@@ -122,6 +105,7 @@ const Main = ({ setSelectPrice }) => {
                             <SlideCard
                                 slideLetter={slideLetter.poor.letter[0]}
                                 slideLetterPrice={slideLetter.poor.letter[1]}
+                                slideWebp={slideLetter.poor.webp}
                                 slideImg={slideLetter.poor.img}
                                 cardClassName={slideLetter.poor.cardClassName}
                                 id={slideLetter.poor.id}
@@ -129,6 +113,7 @@ const Main = ({ setSelectPrice }) => {
                             <SlideCard
                                 slideLetter={slideLetter.any.letter[0]}
                                 slideLetterPrice={slideLetter.any.letter[1]}
+                                slideWebp={slideLetter.any.webp}
                                 slideImg={slideLetter.any.img}
                                 cardClassName={slideLetter.any.cardClassName}
                                 id={slideLetter.any.id}
