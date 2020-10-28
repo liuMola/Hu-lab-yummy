@@ -59,13 +59,7 @@ sans-serif;
 
 @font-face {
     font-family: 'GenSenMaru-Bold';
-    src:
-        url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
-        url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'GenSenMaru-Bold';
+    font-display: swap;
     src:
         url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
         url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
@@ -73,6 +67,7 @@ sans-serif;
 
 @font-face {
     font-family: 'GenSenMaru-Medium';
+    font-display: swap;
     src:
         url('./font/GenSenMaruGothicTW-Medium.woff2') format('woff2'),
         url('./font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
