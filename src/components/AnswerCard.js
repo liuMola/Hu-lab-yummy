@@ -5,13 +5,28 @@ import Store from "./Store";
 
 const AnswerCard = ({ foodChoice }) => {
 
-    const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.9], delay: 2 };
+    const answerCardVariants = {
+        initial: { y: 1000, opacity: 0 },
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                delay: 2,
+                duration: 1,
+                ease: [0.43, 0.13, 0.23, 0.9]
+            }
+        }
+    };
+
     let { name, trueName, price, address, expensive } = foodChoice;
     let richOrPoor = (expensive) ? "拎杯有錢啦 就要吃貴的啦" : "我窮(可在一百內解決)"
 
     return (
         <>
-            <motion.div transition={transition} initial={{ y: 1000, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="answer-card">
+            <motion.div variants={answerCardVariants}
+                initial="initial"
+                animate="animate"
+                className="answer-card">
                 <div className="card-inner">
                     <div className="card-top">
                         <div className="rich-or-poor">

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
-import AnswerCard from "./AnswerCard";
-import Button from "./Button";
+import AnswerCard from "./components/AnswerCard";
+import Button from "./components/Button";
 import foodData from "./dataFood.json";
 
 //animatino variables
@@ -28,13 +28,15 @@ const buttonVariants = {
 };
 
 
-function Answer({ selectPrice }) {
+const Answer = ({ selectPrice }) => {
     const buttonLetter = "Draw again!($10)";
     const path = "/";
-    const [foodChoice, setFoodChoice] = useState({});
     let foodArray = Object.values(foodData);
     let expensiveFood = [];
     let cheapFood = [];
+    //state
+    const [foodChoice, setFoodChoice] = useState({});
+
     function filterFoodPrice() {
         let i = 1;
         for (i; i < foodArray.length; i++) {
@@ -50,7 +52,6 @@ function Answer({ selectPrice }) {
             return foodData[Math.floor(Math.random() * foodData.length)]
         }
     }
-    console.log(selectPrice)
 
     useEffect(() => {
         filterFoodPrice();

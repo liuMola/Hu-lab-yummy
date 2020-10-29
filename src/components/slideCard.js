@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SlideCard({ slideImg, slideWebp, slideLetter, slideLetterPrice, cardClassName, id, handleOnChange }) {
+const SlideCard = ({ slideImg, slideWebp, slideLetter, slideLetterPrice, cardClassName, id, handleOnChange }) => {
     return (
         <label htmlFor={id}>
             <div className={cardClassName}>

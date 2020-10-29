@@ -34,9 +34,9 @@
     {
         "id": 4,
         "name": "Geng魚湯",
-        "trueName": "",
-        "address": "",
-        "price": "",
+        "trueName": "龍泉深海鮮魚湯",
+        "address": "台北市大安區師大路117巷7號",
+        "price": "80 - 120",
         "expensive": true
     },
     {

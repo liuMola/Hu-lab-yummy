@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
-import Button from "./Button";
-import SlideCard from "./slideCard";
+import Button from "./components/Button";
+import SlideCard from "./components/slideCard";
 
 
 const Main = ({ setSelectPrice }) => {
     const buttonLetter = "Draw!";
     const path = "/answer";
 
-    //State
-    const [price, setPrice] = useState(null);
 
     const handleOnChange = (id) => {
         let getInput = document.getElementsByTagName("input");
@@ -25,7 +23,6 @@ const Main = ({ setSelectPrice }) => {
                 }
             }
         }
-        setPrice(id);
         checkInput();
         setSelectPrice(id);
     }

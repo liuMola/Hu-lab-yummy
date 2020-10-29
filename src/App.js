@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //custom components
-import Loading from "./loading";
+import Loading from "./components/loading";
 import Header from "./Header";
 import Main from "./main";
 import Answer from './Answer';
 //style
-import './App.scss';
-import './normalize.css';
+import './style/App.scss';
+import './style/normalize.css';
 
 const App = () => {
   const [selectPrice, setSelectPrice] = useState(null);

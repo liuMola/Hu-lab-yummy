@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import UncontrolledLottie from "./lottie/UncontrolledLottie";
+import UncontrolledLottie from "../lottie/UncontrolledLottie";
 import { motion } from "framer-motion";
 
 const Loading = () => {
-
+    //state
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -33,9 +33,7 @@ const Loading = () => {
                             <div className="loading-logo">
                                 <UncontrolledLottie />
                             </div>
-                            <div className="hu-lab">
-                                HU LAB
-                </div>
+                            <div className="hu-lab">HU LAB</div>
                         </div>
                     </motion.div>
                 ) : (

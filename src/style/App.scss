@@ -4,11 +4,8 @@ html,
 body,
 #root {
   height: 100%;
-  // WebKit-based browsers will ignore this
   min-height: -moz-available;
-  // Mozilla-based browsers will ignore this.
   min-height: -webkit-fill-available;
-  // For WebKit-based browsers, Edge not support this
   min-height: fill-available;
   width: 100vw;
   margin: 0%;
@@ -26,10 +23,10 @@ body {
 .loading-wrapper {
   position: absolute;
   @include flex($flexDirection: null);
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
   background: #f3f3f3;
   z-index: 10;
 
@@ -98,9 +95,9 @@ body {
   }
 
   div:nth-child(2) {
+    padding-top: 2%;
     font-family: $Goldman-bold;
     font-size: 26px;
-    padding-top: 2%;
   }
 }
 
@@ -111,22 +108,22 @@ body {
   height: 75%;
   width: 100%;
   bottom: 0;
-  background: $white;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  background: $white;
 
   .text {
     padding-top: calc(30px + 1vh);
     font-family: $Apercu;
-    text-align: center;
     font-size: 14px;
+    text-align: center;
   }
 }
 
 .jar-tsai {
   position: absolute;
-  left: 3%;
   bottom: 10px;
+  left: 3%;
   font-family: $Apercu;
   font-size: 10px;
   opacity: 0.5;
@@ -153,10 +150,10 @@ body {
   }
 
   .button {
-    border: none;
-    margin-top: 15px;
     height: 60px;
     width: 151px;
+    margin-top: 15px;
+    border: none;
     border-radius: 30px;
     box-shadow: 5px 5px 13px 0px rgba(0, 0, 0, 0.09);
     background: $heavy-yellow;
@@ -170,8 +167,8 @@ body {
 
         .dice {
           img {
-            width: 30px;
             height: 30px;
+            width: 30px;
           }
         }
 
@@ -207,20 +204,20 @@ body {
 
     .blank-space {
       position: relative;
-      min-width: 15px;
       min-height: 20px;
+      min-width: 15px;
     }
   }
 
   .slide-card {
     position: relative;
-    background: #EBEBEB;
-    border-radius: 20px;
     height: 75%;
     width: 150px;
-    min-width: 140px;
     min-height: 210px;
+    min-width: 140px;
     margin: 8% 20px 5% 3%;
+    border-radius: 20px;
+    background: #EBEBEB;
     box-shadow: 7px 7px 13px 0px rgba(0, 0, 0, 0.12);
     transition: all 300ms $ease;
 
@@ -235,13 +232,13 @@ body {
       min-height: 190px;
 
       .slide-img {
-        width: 100%;
         height: 100%;
+        width: 100%;
         transition: transform 300ms $ease;
 
         picture {
-          width: 100px;
           height: 100px;
+          width: 100px;
         }
       }
 
@@ -351,7 +348,8 @@ body {
       .rich-or-poor {
         position: relative;
         @include flex($justifyContent: null, $flexDirection: null);
-        left: -15%;
+        align-self: flex-start;
+        left: 30px;
         font-family: $GenSenMaru-medium;
         font-size: 11.3px;
         opacity: 0.6;
@@ -443,8 +441,8 @@ body {
   left: -27%;
 
   div:nth-child(2) {
-    font-size: 14px;
     margin-left: 10px;
     font-family: $Apercu;
+    font-size: 14px;
   }
 }

@@ -32,43 +32,43 @@ sans-serif;
 @font-face {
     font-family: 'Goldmansans';
     src:
-        url('./font/GoldmanSans_W_Rg.woff2') format('woff2'),
-        url('./font/GoldmanSans_Rg.ttf') format('truetype');
+        url('../font/GoldmanSans_W_Rg.woff2') format('woff2'),
+        url('../font/GoldmanSans_Rg.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Goldmansans-Med';
     src:
-        url('./font/GoldmanSans_W_Md.woff2') format('woff2'),
-        url('./font/GoldmanSans_Md.ttf') format('truetype');
+        url('../font/GoldmanSans_W_Md.woff2') format('woff2'),
+        url('../font/GoldmanSans_Md.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Goldmansans-Bold';
     src:
-        url('./font/GoldmanSans_W_Bd.woff2') format('woff2'),
-        url('./font/GoldmanSans_Bd.ttf') format('truetype');
+        url('../font/GoldmanSans_W_Bd.woff2') format('woff2'),
+        url('../font/GoldmanSans_Bd.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Apercu';
     src:
-        url('./font/Apercu_Re.woff2') format('woff2'),
-        url('./font/Apercu_Re.ttf') format('truetype');
+        url('../font/Apercu_Re.woff2') format('woff2'),
+        url('../font/Apercu_Re.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'GenSenMaru-Bold';
     font-display: swap;
     src:
-        url('./font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
-        url('./font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
+        url('../font/GenSenMaruGothicTW-Bold.woff2') format('woff2'),
+        url('../font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'GenSenMaru-Medium';
     font-display: swap;
     src:
-        url('./font/GenSenMaruGothicTW-Medium.woff2') format('woff2'),
-        url('./font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
+        url('../font/GenSenMaruGothicTW-Medium.woff2') format('woff2'),
+        url('../font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
 }
