@@ -20,6 +20,6 @@ Hu Lab is a laboratory settling down in NTU campus, running by Prof. [Jer-Ming H
   
 > Note: This web app is only optimized for mobile devices, please proceed to the site with small screen devices for the best experience, thanks!
 
-## `Contributing` ##
+## Contributing ##
 
 Members in Hu Lab contributed the idea and list of restaurants.
