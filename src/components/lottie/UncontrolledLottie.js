@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Lottie from 'react-lottie'
-import animationData from '../lottie/data.json'
+import animationData from './data.json'
 
 const UncontrolledLottie = () => {
     const [isStopped, setIsStopped] = useState(true);

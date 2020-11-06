@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
+import Header from "./components/Header";
 import AnswerCard from "./components/AnswerCard";
 import Button from "./components/Button";
 import foodData from "./dataFood.json";
@@ -61,21 +62,24 @@ const Answer = ({ selectPrice }) => {
     }, [])
 
     return (
-        <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="answer" >
-            <motion.div initial="initial" animate="animate" variants={goesVariants} className="meal-goes">
-                <div>
-                    <svg width='9px' height='10px' >
-                        <path d=" M 0 0  L9 4 L 0 8 Z " />
-                    </svg>
-                </div>
-                <div>Your meal goes to</div>
+        <>
+            <Header />
+            <motion.div exit={{ opacity: 0 }} transition={{ duration: 1 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="answer" >
+                <motion.div initial="initial" animate="animate" variants={goesVariants} className="meal-goes">
+                    <div>
+                        <svg width='9px' height='10px' >
+                            <path d=" M 0 0  L9 4 L 0 8 Z " />
+                        </svg>
+                    </div>
+                    <div>Your meal goes to</div>
+                </motion.div>
+                <AnswerCard foodChoice={foodChoice} />
+                <motion.div initial="initial" animate="animate" variants={buttonVariants} className="button-wrapper">
+                    <div >Don't like it?</div>
+                    <Button buttonLetter={buttonLetter} path={path} />
+                </motion.div>
             </motion.div>
-            <AnswerCard foodChoice={foodChoice} />
-            <motion.div initial="initial" animate="animate" variants={buttonVariants} className="button-wrapper">
-                <div >Don't like it?</div>
-                <Button buttonLetter={buttonLetter} path={path} />
-            </motion.div>
-        </motion.div>
+        </>
     )
 }
 

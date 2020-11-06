@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import UncontrolledLottie from "../lottie/UncontrolledLottie";
+import UncontrolledLottie from "./lottie/UncontrolledLottie";
 import { motion } from "framer-motion";
 
 const Loading = () => {

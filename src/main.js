@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import Header from "./components/Header";
 import Button from "./components/Button";
-import SlideCard from "./components/slideCard";
+import SlideCard from "./components/SlideCard";
 
 
 const Main = ({ setSelectPrice }) => {
@@ -71,6 +72,7 @@ const Main = ({ setSelectPrice }) => {
 
     return (
         <>
+            <Header />
             <motion.div exit={{ opacity: 0 }} className="main">
                 <motion.div variants={titleVariants}
                     initial="initial"
@@ -80,7 +82,6 @@ const Main = ({ setSelectPrice }) => {
                     <div>Draw your meal now</div>
                 </motion.div>
                 <motion.div variants={mainCardVariants} initial="initial" animate="animate" className="card">
-                    {/* <motion.div className="card"> */}
                     <div className="pick">
                         <div>
                             <svg width='9px' height='10px' >

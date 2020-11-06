@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 //custom components
-import Loading from "./components/loading";
-import Header from "./Header";
-import Main from "./main";
-import Answer from './Answer';
+import Loading from "./components/Loading";
+import Main from "./Main";
+import Answer from "./Answer"
 //style
 import './style/App.scss';
 import './style/normalize.css';
@@ -16,7 +15,6 @@ const App = () => {
   return (
     <>
       <Loading />
-      <Header />
       <Route
         render={({ location }) => (
           <AnimatePresence exitBeforeEnter>
