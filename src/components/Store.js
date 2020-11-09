@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from "react-three-fiber";
-import { useGLTFLoader } from "drei";
-
+import { useGLTFLoader, Html } from "drei";
+import IconLoading from "./IconLoading";
 
 const Model = () => {
   const gltf = useGLTFLoader('/japaneseRestaurant.gltf', true);
@@ -24,13 +24,21 @@ const Lights = () => {
   )
 }
 
+const ModelLoading = () => {
+  return (
+    <Html>
+      <IconLoading />
+    </Html>
+  )
+}
+
 function Store() {
 
   return (
     <>
       <Canvas className="canvas" colorManagement camera={{ position: [0, 30, 100], fov: 10 }}>
         <Lights />
-        <Suspense fallback={null}>
+        <Suspense fallback={<ModelLoading />}>
           <Model />
         </Suspense>
       </Canvas>
