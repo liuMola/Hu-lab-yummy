@@ -73,7 +73,7 @@ const Main = ({ setSelectPrice }) => {
     return (
         <>
             <Header />
-            <motion.div exit={{ opacity: 0 }} className="main">
+            <motion.div exit={{ opacity: 0 }} id="main">
                 <motion.div variants={titleVariants}
                     initial="initial"
                     animate="animate"

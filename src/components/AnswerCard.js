@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from "framer-motion";
+import IconLoading from "./IconLoading";
 
-import Store from "./Store";
+const Store = lazy(() => import('./Store'));
 
 const AnswerCard = ({ foodChoice }) => {
 
@@ -38,7 +39,9 @@ const AnswerCard = ({ foodChoice }) => {
                             <div>{richOrPoor}</div>
                         </div>
                         <div className="canvas">
-                            <Store />
+                            <Suspense fallback={<IconLoading />}>
+                                <Store />
+                            </Suspense>
                         </div>
                         <div>{name}</div>
                     </div>
