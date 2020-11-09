@@ -13,26 +13,27 @@ const Model = () => {
     </mesh>
   )
 }
-//Lights for canvas
-const Lights = () => {
-  return (
-    <>
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight position={[10, 0, 5]} intensity={1} />
-    </>
-  )
-}
 
-const ModelLoading = () => {
-  return (
-    <Html>
-      <IconLoading />
-    </Html>
-  )
-}
 
-function Store() {
+const Store = () => {
+  //Lights for canvas
+  const Lights = () => {
+    return (
+      <>
+        <ambientLight intensity={0.3} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <directionalLight position={[10, 0, 5]} intensity={1} />
+      </>
+    )
+  }
+
+  const ModelLoading = () => {
+    return (
+      <Html center>
+        <IconLoading />
+      </Html>
+    )
+  }
 
   return (
     <>
